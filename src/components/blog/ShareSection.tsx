@@ -70,7 +70,7 @@ const socialPlatforms: Record<string, SocialPlatform> = {
     icon: "email",
     label: "Email",
     generateUrl: (title, url) => 
-      `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`Check out this post: ${url}`)}`,
+      `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(`Regarde ce post: ${url}`)}`,
   },
 };
 
@@ -86,13 +86,13 @@ export function ShareSection({ title, url }: ShareSectionProps) {
       await navigator.clipboard.writeText(url);
       addToast({
         variant: "success",
-        message: "Link copied to clipboard",
+        message: "Lien copié dans le presse-papiers.",
       });
     } catch (err) {
-      console.error('Failed to copy: ', err);
+      console.error('Échec de la copie : ', err);
       addToast({
         variant: "danger",
-        message: "Failed to copy link",
+        message: "Impossible de copier le lien.",
       });
     }
   };

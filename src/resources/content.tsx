@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Mesquita",
   name: `Virgil Mesquita`,
   role: "Étudiant",
-  avatar: "/images/avatar.jpeg",
+  avatar: "/images/avatar1.jpg",
   email: "virgil.mesquita@btsinfo-aurillac.fr",
   location: "Europe/Paris", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["Français", "Anglais", "Portugais"], // optional: Leave the array empty if you don't want to display languages
@@ -29,7 +29,7 @@ const social: Social = [
     essential: true,
   },
   {
-    name: "Email",
+    name: "virgil.mesquita@btsinfo-aurillac.fr",
     icon: "email",
     link: `mailto:${person.email}`,
     essential: true,
@@ -203,6 +203,10 @@ const about: About = {
             name: "SQL",
             icon: "sql",
           },
+          {
+            name: "Python",
+            icon: "python",
+          },
         ],
         // optional: leave the array empty if you don't want to display images
         images: [],
@@ -232,13 +236,50 @@ const about: About = {
         ],
         images: [],
       },
+      {
+        title: "Design",
+        description: (
+          <>Outils de création</>
+        ),
+        tags: [
+          {
+            name: "Photoshop",
+            icon: "photoshop",
+          },
+          {
+            name: "InDesign",
+            icon: "indesign",
+          },
+          {
+            name: "Illustrator",
+            icon: "illustrator",
+          },
+          {
+            name: "Xd",
+            icon: "Xd",
+          },
+          {
+            name: "Premiere Pro",
+            icon: "premierepro",
+          },
+          {
+            name: "After Effects",
+            icon: "aftereffects",
+          },
+          {
+            name: "Blender",
+            icon: "blender",
+          },
+        ],
+        images: [],
+      },
     ],
   },
 };
 
 const blog: Blog = {
   path: "/blog",
-  label: "Certification",
+  label: "Certifications",
   title: "Mes Certifications",
   description: `Read what ${person.name} has been up to recently`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
@@ -247,7 +288,7 @@ const blog: Blog = {
 
 const work: Work = {
   path: "/work",
-  label: "Projet",
+  label: "Projets",
   title: `Projets – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
