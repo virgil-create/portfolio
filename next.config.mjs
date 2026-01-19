@@ -7,11 +7,9 @@ const withMDX = mdx({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /*change*/output: "export",
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   transpilePackages: ["next-mdx-remote"],
   images: {
-    /*change*/unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
