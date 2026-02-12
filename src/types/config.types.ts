@@ -139,9 +139,6 @@ export type SameAsConfig = {
   discord: string;
 };
 
-/**
- * Social sharing configuration for blog posts.
- */
 export type SocialSharingConfig = {
   display: boolean;
   platforms: {

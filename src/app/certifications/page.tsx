@@ -1,35 +1,35 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { Posts } from "@/components/blog/Posts";
-import { baseURL, blog, person } from "@/resources";
+import { Posts } from "@/components/certifications/Posts";
+import { baseURL, certifications, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
-    title: blog.title,
-    description: blog.description,
+    title: certifications.title,
+    description: certifications.description,
     baseURL: baseURL,
-    image: `/api/og/generate?title=${encodeURIComponent(blog.title)}`,
-    path: blog.path,
+    image: `/api/og/generate?title=${encodeURIComponent(certifications.title)}`,
+    path: certifications.path,
   });
 }
 
-export default function Blog() {
+export default function Certifications() {
   return (
     <Column maxWidth="m" paddingTop="24">
       <Schema
         as="blogPosting"
         baseURL={baseURL}
-        title={blog.title}
-        description={blog.description}
-        path={blog.path}
-        image={`/api/og/generate?title=${encodeURIComponent(blog.title)}`}
+        title={certifications.title}
+        description={certifications.description}
+        path={certifications.path}
+        image={`/api/og/generate?title=${encodeURIComponent(certifications.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}/blog`,
+          url: `${baseURL}/certifications`,
           image: `${baseURL}${person.avatar}`,
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
-        {blog.title}
+        {certifications.title}
       </Heading>
       <Column fillWidth flex={1} gap="40">
         <Posts range={[1, 1]} thumbnail />

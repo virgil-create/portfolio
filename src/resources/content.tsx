@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Person, Social, Work } from "@/types";
+import { About, Certifications, Home, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -58,7 +58,7 @@ const home: Home = {
   },
   subline: (
     <>
-    Je suis Virgil, étudiant à <Text as="span" size="xl" weight="strong">Aurillac</Text>. Voici mes propres projets.
+    Je suis Virgil, étudiant en BTS SIO à <Text as="span" size="xl" weight="strong">Aurillac</Text>. Voici mes propres projets.
 </>
   ),
 };
@@ -94,7 +94,18 @@ const about: About = {
     experiences: [
       {
         company: "CGI",
-        timeframe: "2025",
+        timeframe: "5 semaines - 2026",
+        role: "Stagiaire",
+        achievements: [
+          <>
+            Modification d’une application de sécurité et de sureté d'une entreprise (PHP, Angular, WAMP, MySQL)
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "CGI",
+        timeframe: "5 semaines - 2025",
         role: "Stagiaire",
         achievements: [
           <>
@@ -105,7 +116,7 @@ const about: About = {
       },
       {
         company: "L’AFFREUX BONHOMME",
-        timeframe: "2022 et 2024",
+        timeframe: "8 semaines - 2022 et 2024",
         role: "Stagiaire",
         achievements: [
           <>
@@ -120,7 +131,7 @@ const about: About = {
       },
       {
         company: "LA MISSION LOCALE",
-        timeframe: "2023",
+        timeframe: "6 semaines - 2023",
         role: "Stagiaire",
         achievements: [
           <>
@@ -144,7 +155,7 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Études",
     institutions: [
       {
@@ -270,6 +281,10 @@ const about: About = {
             name: "Blender",
             icon: "blender",
           },
+          {
+            name: "Canva",
+            icon: "canva",
+          },
         ],
         images: [],
       },
@@ -277,13 +292,11 @@ const about: About = {
   },
 };
 
-const blog: Blog = {
-  path: "/blog",
+const certifications: Certifications = {
+  path: "/certifications",
   label: "Certifications",
   title: "Mes Certifications",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
@@ -291,59 +304,6 @@ const work: Work = {
   label: "Projets",
   title: `Projets – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 };
 
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Galerie",
-  title: `Galerie – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-export { person, social, home, about, blog, work, gallery };
+export { person, social, home, about, certifications, work };

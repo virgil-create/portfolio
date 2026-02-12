@@ -192,10 +192,10 @@ export interface About extends BasePageConfig {
 }
 
 /**
- * Blog page configuration.
- * @description Configuration for the Blog page, including metadata and navigation label.
+ * Certifications page configuration.
+ * @description Configuration for the ertifications page, including metadata and navigation label.
  */
-export interface Blog extends BasePageConfig {}
+export interface Certifications extends BasePageConfig {}
 
 /**
  * Work/projects page configuration.

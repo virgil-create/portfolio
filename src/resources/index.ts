@@ -4,9 +4,8 @@ export {
   social,
   home,
   about,
-  blog,
+  certifications,
   work,
-  gallery,
 } from "./content";
 
 export {

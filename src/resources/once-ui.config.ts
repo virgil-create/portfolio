@@ -19,8 +19,7 @@ const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/certifications": true,
 };
 
 const display: DisplayConfig = {
@@ -155,7 +154,7 @@ const sameAs: SameAsConfig = {
   discord: "",
 };
 
-// social sharing configuration for blog posts
+// social sharing configuration for certifications posts
 const socialSharing: SocialSharingConfig = {
   display: true,
   platforms: {
