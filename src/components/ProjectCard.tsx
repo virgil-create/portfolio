@@ -16,9 +16,6 @@ interface ProjectCardProps {
   images: string[];
   title: string;
   content: string;
-  description: string;
-  avatars: { src: string }[];
-  link: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -26,9 +23,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   images = [],
   title,
   content,
-  description,
-  avatars,
-  link,
 }) => {
   return (
     <Column fillWidth gap="m">
@@ -54,14 +48,8 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             </Heading>
           </Flex>
         )}
-        {(avatars?.length > 0 || description?.trim() || content?.trim()) && (
+        {(content?.trim()) && (
           <Column flex={7} gap="16">
-            {avatars?.length > 0 && <AvatarGroup avatars={avatars} size="m" reverse />}
-            {description?.trim() && (
-              <Text wrap="balance" variant="body-default-s" onBackground="neutral-weak">
-                {description}
-              </Text>
-            )}
             <Flex gap="24" wrap>
               {content?.trim() && (
                 <SmartLink
