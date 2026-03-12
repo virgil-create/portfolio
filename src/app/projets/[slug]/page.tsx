@@ -8,16 +8,12 @@ import {
   HeadingNav,
   Row,
   Text,
-  SmartLink,
-  Avatar,
   Media,
   Line,
 } from "@once-ui-system/core";
 import { baseURL, about, projets, person } from "@/resources";
-import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from "next";
-import { ShareSection } from "@/components/projets/ShareSection";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "projets", "posts"]);
@@ -117,14 +113,8 @@ export default async function Projets({ params }: { params: Promise<{ slug: stri
             />
           )}
           <Column as="article" maxWidth="s">
-            <CustomMDX source={post.content} />
+            <CustomMDX    source={post.content} />
           </Column>
-          
-          <ShareSection 
-            title={post.metadata.title} 
-            url={`${baseURL}${projets.path}/${post.slug}`} 
-          />
-
           <Column fillWidth gap="40" horizontal="center" marginTop="40">
             <Line maxWidth="40" />
           </Column>
