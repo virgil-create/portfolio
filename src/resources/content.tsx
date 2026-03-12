@@ -1,4 +1,4 @@
-import { About, Certifications, Home, Person, Social, Work } from "@/types";
+import { About, Projets, Certifications, Home, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -8,14 +8,11 @@ const person: Person = {
   role: "Étudiant",
   avatar: "/images/avatar1.jpg",
   email: "virgil.mesquita@btsinfo-aurillac.fr",
-  location: "Europe/Paris", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["Français", "Anglais", "Portugais"], // optional: Leave the array empty if you don't want to display languages
+  location: "Europe/Paris",
+  languages: ["Français", "Anglais", "Portugais"],
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
@@ -54,7 +51,7 @@ const home: Home = {
         </Text>
       </Row>
     ),
-    href: "/work",
+    href: "/projets",
   },
   subline: (
     <>
@@ -292,6 +289,14 @@ const about: About = {
   },
 };
 
+const projets: Projets = {
+  path: "/projets",
+  label: "Projets",
+  title: "Mes Projets",
+  description: `Read what ${person.name} has been up to recently`,
+};
+
+
 const certifications: Certifications = {
   path: "/certifications",
   label: "Certifications",
@@ -301,9 +306,9 @@ const certifications: Certifications = {
 
 const work: Work = {
   path: "/work",
-  label: "Projets",
-  title: `Projets – ${person.name}`,
+  label: "Stages",
+  title: `Stages – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
 };
 
-export { person, social, home, about, certifications, work };
+export { person, social, home, about, projets, certifications, work };

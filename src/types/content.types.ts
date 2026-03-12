@@ -191,14 +191,8 @@ export interface About extends BasePageConfig {
   };
 }
 
-/**
- * Certifications page configuration.
- * @description Configuration for the ertifications page, including metadata and navigation label.
- */
+export interface Projets extends BasePageConfig {}
+
 export interface Certifications extends BasePageConfig {}
 
-/**
- * Work/projects page configuration.
- * @description Configuration for the Work/Projects page, including metadata and navigation label.
- */
 export interface Work extends BasePageConfig {}

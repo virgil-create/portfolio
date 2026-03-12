@@ -2,6 +2,11 @@ import { getPosts } from "@/utils/utils";
 import { baseURL, routes as routesConfig } from "@/resources";
 
 export default async function sitemap() {
+    const projets = getPosts(["src", "app", "projets", "posts"]).map((post) => ({
+    url: `${baseURL}/projets/${post.slug}`,
+    lastModified: post.metadata.publishedAt,
+  }));
+
   const certifications = getPosts(["src", "app", "certifications", "posts"]).map((post) => ({
     url: `${baseURL}/certifications/${post.slug}`,
     lastModified: post.metadata.publishedAt,
@@ -21,5 +26,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString().split("T")[0],
   }));
 
-  return [...routes, ...certifications, ...works];
+  return [...routes, ...certifications, ...works, ...projets];
 }

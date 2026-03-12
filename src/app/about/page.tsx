@@ -106,7 +106,13 @@ export default function About() {
                   </Tag>
                 ))}
               </Row>
-            )}
+            )}  
+          <Button
+          href="/images/cv/Virgil_MESQUITA_CV.pdf"
+          target="_blank"
+          >
+          Télécharger mon CV
+          </Button>
           </Column>
         )}
         <Column className={styles.blockAlign} flex={9} maxWidth={40}>

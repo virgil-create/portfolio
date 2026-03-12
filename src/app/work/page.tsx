@@ -16,7 +16,7 @@ export default function Work() {
   return (
     <Column maxWidth="m" paddingTop="24">
       <Schema
-        as="webPage"
+        as="blogPosting"
         baseURL={baseURL}
         path={work.path}
         title={work.title}

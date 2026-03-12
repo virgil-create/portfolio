@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, certifications, work } from "@/resources";
+import { routes, display, person, about, certifications, projets, work } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -73,7 +73,6 @@ export const Header = () => {
         }}
       >
         <Row paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Row s={{ hide: true }}>{person.location}</Row>}
         </Row>
         <Row fillWidth horizontal="center">
           <Row
@@ -113,7 +112,7 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="grid"
+                      prefixIcon="calend"
                       href="/work"
                       label={work.label}
                       selected={pathname.startsWith("/work")}
@@ -121,9 +120,28 @@ export const Header = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
-                      prefixIcon="grid"
+                      prefixIcon="calend"
                       href="/work"
                       selected={pathname.startsWith("/work")}
+                    />
+                  </Row>
+                </>
+              )}
+              {routes["/projets"] && (
+                <>
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      prefixIcon="book"
+                      href="/projets"
+                      label={projets.label}
+                      selected={pathname.startsWith("/projets")}
+                    />
+                  </Row>
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon="book"
+                      href="/projets"
+                      selected={pathname.startsWith("/projets")}
                     />
                   </Row>
                 </>
@@ -132,7 +150,7 @@ export const Header = () => {
                 <>
                   <Row s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="book"
+                      prefixIcon="certif"
                       href="/certifications"
                       label={certifications.label}
                       selected={pathname.startsWith("/certifications")}
@@ -140,7 +158,7 @@ export const Header = () => {
                   </Row>
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
-                      prefixIcon="book"
+                      prefixIcon="certif"
                       href="/certifications"
                       selected={pathname.startsWith("/certifications")}
                     />
@@ -164,9 +182,6 @@ export const Header = () => {
             textVariant="body-default-s"
             gap="20"
           >
-            <Flex s={{ hide: true }}>
-              {display.time && <TimeDisplay timeZone={person.location} />}
-            </Flex>
           </Flex>
         </Flex>
       </Row>

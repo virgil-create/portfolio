@@ -13,14 +13,14 @@ import {
   Media,
   Line,
 } from "@once-ui-system/core";
-import { baseURL, about, certifications, person } from "@/resources";
+import { baseURL, about, projets, person } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { getPosts } from "@/utils/utils";
 import { Metadata } from "next";
-import { ShareSection } from "@/components/certifications/ShareSection";
+import { ShareSection } from "@/components/projets/ShareSection";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
-  const posts = getPosts(["src", "app", "certifications", "posts"]);
+  const posts = getPosts(["src", "app", "projets", "posts"]);
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -36,7 +36,7 @@ export async function generateMetadata({
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  const posts = getPosts(["src", "app", "certifications", "posts"]);
+  const posts = getPosts(["src", "app", "projets", "posts"]);
   let post = posts.find((post) => post.slug === slugPath);
 
   if (!post) return {};
@@ -46,17 +46,17 @@ export async function generateMetadata({
     description: post.metadata.summary,
     baseURL: baseURL,
     image: post.metadata.image || `/api/og/generate?title=${post.metadata.title}`,
-    path: `${certifications.path}/${post.slug}`,
+    path: `${projets.path}/${post.slug}`,
   });
 }
 
-export default async function Certifications({ params }: { params: Promise<{ slug: string | string[] }> }) {
+export default async function Projets({ params }: { params: Promise<{ slug: string | string[] }> }) {
   const routeParams = await params;
   const slugPath = Array.isArray(routeParams.slug)
     ? routeParams.slug.join("/")
     : routeParams.slug || "";
 
-  let post = getPosts(["src", "app", "certifications", "posts"]).find((post) => post.slug === slugPath);
+  let post = getPosts(["src", "app", "projets", "posts"]).find((post) => post.slug === slugPath);
 
   if (!post) {
     notFound();
@@ -75,7 +75,7 @@ export default async function Certifications({ params }: { params: Promise<{ slu
           <Schema
             as="blogPosting"
             baseURL={baseURL}
-            path={`${certifications.path}/${post.slug}`}
+            path={`${projets.path}/${post.slug}`}
             title={post.metadata.title}
             description={post.metadata.summary}
             datePublished={post.metadata.publishedAt}
@@ -91,12 +91,6 @@ export default async function Certifications({ params }: { params: Promise<{ slu
             }}
           />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
-            <SmartLink href="/certifications">
-              <Text variant="label-strong-m">Certifications</Text>
-            </SmartLink>
-            <Text variant="body-default-xs" onBackground="neutral-weak" marginBottom="12">
-              {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
-            </Text>
             <Heading variant="display-strong-m">{post.metadata.title}</Heading>
             {post.metadata.subtitle && (
               <Text 
@@ -109,13 +103,7 @@ export default async function Certifications({ params }: { params: Promise<{ slu
               </Text>
             )}
           </Column>
-          <Row marginBottom="32" horizontal="center">
-            <Row gap="16" vertical="center">
-              <Avatar size="s" src={person.avatar} />
-              <Text variant="label-default-m" onBackground="brand-weak">
-                {person.name}
-              </Text>
-            </Row>
+          <Row marginBottom="10" horizontal="center">
           </Row>
           {post.metadata.image && (
             <Media
@@ -136,7 +124,7 @@ export default async function Certifications({ params }: { params: Promise<{ slu
           
           <ShareSection 
             title={post.metadata.title} 
-            url={`${baseURL}${certifications.path}/${post.slug}`} 
+            url={`${baseURL}${projets.path}/${post.slug}`} 
           />
 
           <Column fillWidth gap="40" horizontal="center" marginTop="40">

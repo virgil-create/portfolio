@@ -32,9 +32,8 @@ export default function Certifications() {
         {certifications.title}
       </Heading>
       <Column fillWidth flex={1} gap="40">
-        <Posts range={[1, 1]} thumbnail />
-        <Posts range={[2, 3]} columns="2" thumbnail direction="column" />
-        <Posts range={[4]} columns="2" />
+        <Posts range={[1, 2]} columns="2" thumbnail direction="column" />
+        <Posts range={[3]} columns="2" />
       </Column>
     </Column>
   );

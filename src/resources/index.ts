@@ -4,6 +4,7 @@ export {
   social,
   home,
   about,
+  projets,
   certifications,
   work,
 } from "./content";
