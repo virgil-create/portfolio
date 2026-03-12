@@ -103,8 +103,6 @@ export default async function Projets({ params }: { params: Promise<{ slug: stri
               </Text>
             )}
           </Column>
-          <Row marginBottom="10" horizontal="center">
-          </Row>
           {post.metadata.image && (
             <Media
               src={post.metadata.image}
