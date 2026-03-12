@@ -73,22 +73,23 @@ export default async function Certifications({ params }: { params: Promise<{ slu
       <Row fillWidth horizontal="center">
         <Column as="section" maxWidth="m" horizontal="center" gap="l" paddingTop="24">
           <Schema
-            as="blogPosting"
-            baseURL={baseURL}
-            path={`${certifications.path}/${post.slug}`}
-            title={post.metadata.title}
-            datePublished={post.metadata.publishedAt}
-            dateModified={post.metadata.publishedAt}
-            image={
-              post.metadata.image ||
-              `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`
-            }
-            author={{
-              name: person.name,
-              url: `${baseURL}${about.path}`,
-              image: `${baseURL}${person.avatar}`,
-            }}
-          />
+  as="blogPosting"
+  baseURL={baseURL}
+  path={`${certifications.path}/${post.slug}`}
+  title={post.metadata.title}
+  description={post.metadata.summary}
+  datePublished={post.metadata.publishedAt}
+  dateModified={post.metadata.publishedAt}
+  image={
+    post.metadata.image ||
+    `/api/og/generate?title=${encodeURIComponent(post.metadata.title)}`
+  }
+  author={{
+    name: person.name,
+    url: `${baseURL}${about.path}`,
+    image: `${baseURL}${person.avatar}`,
+  }}
+/>
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
             <SmartLink href="/certifications">
               <Text variant="label-strong-m">Certifications</Text>
