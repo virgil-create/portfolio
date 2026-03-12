@@ -77,7 +77,6 @@ export default async function Certifications({ params }: { params: Promise<{ slu
             baseURL={baseURL}
             path={`${certifications.path}/${post.slug}`}
             title={post.metadata.title}
-            description={post.metadata.summary}
             datePublished={post.metadata.publishedAt}
             dateModified={post.metadata.publishedAt}
             image={
