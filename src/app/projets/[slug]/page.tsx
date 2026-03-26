@@ -115,9 +115,7 @@ export default async function Projets({ params }: { params: Promise<{ slug: stri
           <Column as="article" maxWidth="s">
             <CustomMDX    source={post.content} />
           </Column>
-          <Column fillWidth gap="40" horizontal="center" marginTop="40">
-            <Line maxWidth="40" />
-          </Column>
+          
           <ScrollToHash />
         </Column>
       </Row>
