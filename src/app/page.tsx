@@ -2,7 +2,6 @@ import {
   Heading,
   Text,
   Button,
-  Avatar,
   RevealFx,
   Column,
   Badge,
@@ -78,14 +77,6 @@ export default function Home() {
               arrowIcon
             >
               <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                  />
-                )}
                 {about.title}
               </Row>
             </Button>

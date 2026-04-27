@@ -25,7 +25,6 @@ export default function Projets() {
         author={{
           name: person.name,
           url: `${baseURL}/projets`,
-          image: `${baseURL}${person.avatar}`,
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">

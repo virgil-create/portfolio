@@ -6,8 +6,7 @@ const person: Person = {
   lastName: "Mesquita",
   name: `Virgil Mesquita`,
   role: "Étudiant",
-  avatar: "/images/avatar1.jpg",
-  email: "virgil.mesquita@btsinfo-aurillac.fr",
+  email: "virgil.mesquita@sio-aurillac.fr",
   location: "Europe/Paris",
   languages: ["Français", "Anglais", "Portugais"],
 };
@@ -26,7 +25,7 @@ const social: Social = [
     essential: true,
   },
   {
-    name: "virgil.mesquita@btsinfo-aurillac.fr",
+    name: "virgil.mesquita@sio-aurillac.fr",
     icon: "email",
     link: `mailto:${person.email}`,
     essential: true,

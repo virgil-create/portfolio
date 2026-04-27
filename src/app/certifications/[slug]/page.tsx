@@ -62,11 +62,6 @@ export default async function Certifications({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
-
   return (
     <Row fillWidth>
       <Row maxWidth={12} m={{ hide: true }} />
@@ -87,7 +82,6 @@ export default async function Certifications({ params }: { params: Promise<{ slu
   author={{
     name: person.name,
     url: `${baseURL}${about.path}`,
-    image: `${baseURL}${person.avatar}`,
   }}
 />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
@@ -111,7 +105,6 @@ export default async function Certifications({ params }: { params: Promise<{ slu
           </Column>
           <Row marginBottom="32" horizontal="center">
             <Row gap="16" vertical="center">
-              <Avatar size="s" src={person.avatar} />
               <Text variant="label-default-m" onBackground="brand-weak">
                 {person.name}
               </Text>
