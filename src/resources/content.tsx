@@ -68,9 +68,6 @@ const about: About = {
     display: true,
     subItems: false,
   },
-  avatar: {
-    display: true,
-  },
   
   
   intro: {

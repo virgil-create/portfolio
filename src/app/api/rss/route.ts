@@ -23,7 +23,7 @@ export async function GET() {
     <managingEditor>${person.email || "noreply@example.com"} (${person.name})</managingEditor>
     <webMaster>${person.email || "noreply@example.com"} (${person.name})</webMaster>
     <image>
-      <url>${baseURL}${person.avatar || "/images/avatar.jpg"}</url>
+      <url>${baseURL}</url>
       <title>${certifications.title}</title>
       <link>${baseURL}/certifications</link>
     </image>

@@ -25,7 +25,7 @@ export default function Certifications() {
         author={{
           name: person.name,
           url: `${baseURL}/certifications`,
-          image: `${baseURL}${person.avatar}`,
+          image: `${baseURL}`,
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">

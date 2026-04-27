@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   Column,
   Heading,
@@ -77,9 +76,8 @@ export default function About() {
         </Column>
       )}
       <Row fillWidth s={{ direction: "column"}} horizontal="center">
-        {about.avatar.display && (
+        {about && (
           <Column
-            className={styles.avatar}
             top="64"
             fitHeight
             position="sticky"
@@ -92,7 +90,6 @@ export default function About() {
             flex={3}
             horizontal="center"
           >
-            
             <Row gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
               {person.location}

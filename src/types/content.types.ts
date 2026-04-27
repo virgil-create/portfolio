@@ -90,7 +90,7 @@ export interface Home extends BasePageConfig {
 
 /**
  * About page configuration.
- * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
+ * @description Configuration for the About page, including sections for table of contents, calendar, introduction, work experience, studies, and technical skills.
  */
 export interface About extends BasePageConfig {
   /** Table of contents configuration */
@@ -99,11 +99,6 @@ export interface About extends BasePageConfig {
     display: boolean;
     /** Whether to show sub-items in the table of contents */
     subItems: boolean;
-  };
-  /** Avatar section configuration */
-  avatar: {
-    /** Whether to display the avatar */
-    display: boolean;
   };
   /** Introduction section */
   intro: {

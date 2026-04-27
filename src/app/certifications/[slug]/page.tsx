@@ -9,7 +9,6 @@ import {
   Row,
   Text,
   SmartLink,
-  Avatar,
   Media,
   Line,
 } from "@once-ui-system/core";
