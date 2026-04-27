@@ -25,7 +25,7 @@ export default function Work() {
         author={{
           name: person.name,
           url: `${baseURL}${about.path}`,
-          image: `${baseURL}${person.avatar}`,
+          image: `${baseURL}`,
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" align="center">

@@ -31,7 +31,6 @@ export default function Home() {
         path={home.path}
         title={home.title}
         description={home.description}
-        
       />
       <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">

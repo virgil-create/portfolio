@@ -58,11 +58,6 @@ export default async function Projets({ params }: { params: Promise<{ slug: stri
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
-
   return (
     <Row fillWidth>
       <Row maxWidth={12} m={{ hide: true }} />
@@ -83,7 +78,7 @@ export default async function Projets({ params }: { params: Promise<{ slug: stri
             author={{
               name: person.name,
               url: `${baseURL}${about.path}`,
-              image: `${baseURL}${person.avatar}`,
+              image: `${baseURL}`,
             }}
           />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
