@@ -1,32 +1,23 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as cookie from "cookie";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
-export async function POST(request: NextRequest) {
-  const body = await request.json();
-  const { password } = body;
-  const correctPassword = process.env.PAGE_ACCESS_PASSWORD;
+const PASSWORD = "gsb$generique,1234";
 
-  if (!correctPassword) {
-    console.error("PAGE_ACCESS_PASSWORD environment variable is not set");
-    return NextResponse.json({ message: "Internal server error" }, { status: 500 });
+export async function POST(request: Request) {
+  const { password } = await request.json();
+
+  if (password !== PASSWORD) {
+    return NextResponse.json({ error: "Mot de passe incorrect" }, { status: 401 });
   }
 
-  if (password === correctPassword) {
-    const response = NextResponse.json({ success: true }, { status: 200 });
+  const cookieStore = await cookies();
+  cookieStore.set("portfolio_auth", PASSWORD, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    maxAge: 60 * 60 * 24 * 7,
+    sameSite: "lax",
+    path: "/",
+  });
 
-    response.headers.set(
-      "Set-Cookie",
-      cookie.serialize("authToken", "authenticated", {
-        httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 60 * 60,
-        sameSite: "strict",
-        path: "/",
-      }),
-    );
-
-    return response;
-  } else {
-    return NextResponse.json({ message: "Incorrect password" }, { status: 401 });
-  }
+  return NextResponse.json({ ok: true });
 }

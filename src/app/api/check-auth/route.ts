@@ -1,13 +1,15 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as cookie from "cookie";
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
-export async function GET(request: NextRequest) {
-  const cookieHeader = request.headers.get("cookie") || "";
-  const cookies = cookie.parse(cookieHeader);
+const PASSWORD = "gsb$generique,1234";
 
-  if (cookies.authToken === "authenticated") {
-    return NextResponse.json({ authenticated: true }, { status: 200 });
-  } else {
-    return NextResponse.json({ authenticated: false }, { status: 401 });
+export async function GET() {
+  const cookieStore = await cookies();
+  const auth = cookieStore.get("portfolio_auth");
+
+  if (auth?.value === PASSWORD) {
+    return NextResponse.json({ ok: true });
   }
+
+  return NextResponse.json({ ok: false }, { status: 401 });
 }
